@@ -5,103 +5,345 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>居酒屋 ゆう</title>
-<link rel="stylesheet" href="style.css">    
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+    <!-- ナビゲーション -->
+    <!-- ナビゲーション -->
+<nav class="navbar">
+
+    <div class="logo">
+        居酒屋 ゆう
+    </div>
+
+    <!-- ハンバーガーボタン -->
+    <button class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- メニュー -->
+    <div class="nav-links">
+
+        <a href="#about" onclick="closeMenu()">
+            お店について
+        </a>
+
+        <a href="#menu" onclick="closeMenu()">
+            メニュー
+        </a>
+
+        <a href="#hours" onclick="closeMenu()">
+            営業時間
+        </a>
+
+        <a href="#access" onclick="closeMenu()">
+            アクセス
+        </a>
+
+        <button onclick="openReservation(); closeMenu()">
+            予約する
+        </button>
+
+    </div>
+
+</nav>
+
+
+    <!-- メインビジュアル -->
     <header class="hero">
-    <div class="hero-content">
-        <p>鹿児島の居酒屋</p>
-        <h1>居酒屋 ゆう</h1>
-        <p>こだわりの料理とお酒を、ゆっくり楽しむ。</p>
-        <button onclick="openReservation()">予約する</button>
-    </div>
-</header>
+        <div class="hero-content">
 
-    <h2>お店について</h2>
+            <p>鹿児島の居酒屋</p>
 
-    <p>
-        居酒屋ゆうでは、地元の食材を使った料理と
-        豊富なお酒を楽しんでいただけます。
-    </p>
+            <h1>居酒屋 ゆう</h1>
 
-    <h2>おすすめメニュー</h2>
+            <p>こだわりの料理とお酒を、ゆっくり楽しむ。</p>
 
-   <div class="menu-list">
-    <div class="menu-card">
-    <img src="menu1.jpg" alt="地鶏の炭火焼き">
-    <h3>地鶏の炭火焼き</h3>
-    <p>980円</p>
-</div>
-
-    <div class="menu-card">
-        <h3>刺身盛り合わせ</h3>
-        <p>1,280円</p>
-    </div>
-
-    <div class="menu-card">
-        <h3>だし巻き卵</h3>
-        <p>580円</p>
-    </div>
-
-    <div class="menu-card">
-        <h3>生ビール</h3>
-        <p>550円</p>
-    </div>
-</div>
-
-    <h2>営業時間</h2>
-
-    <p>17:00〜24:00</p>
-
-    <h2>アクセス</h2>
-
-    <p>鹿児島市○○町1-2-3</p>
-
-    <button onclick="openReservation()">予約する</button>
-<div id="reservation-modal" class="modal">
-    <div class="reservation-form">
-        <button class="close-button" onclick="closeReservation()">×</button>
-
-        <h2>予約フォーム</h2>
-
-        <form onsubmit="submitReservation(event)">
-            <label>お名前</label>
-            <input type="text" id="name" required>
-
-            <label>電話番号</label>
-            <input type="tel" id="phone" required>
-
-            <label>予約日</label>
-            <input type="date" id="date" required>
-
-            <label>予約時間</label>
-            <input type="time" id="time" required>
-
-            <label>人数</label>
-            <select id="people" required>
-                <option value="">選択してください</option>
-                <option value="1名">1名</option>
-                <option value="2名">2名</option>
-                <option value="3名">3名</option>
-                <option value="4名">4名</option>
-                <option value="5名">5名</option>
-                <option value="6名">6名</option>
-                <option value="7名">7名</option>
-                <option value="8名">8名</option>
-            </select>
-
-            <label>備考</label>
-            <textarea id="message" placeholder="アレルギーなどがあれば入力してください"></textarea>
-
-            <button type="submit" class="submit-button">
-                予約内容を確認
+            <button onclick="openReservation()">
+                予約する
             </button>
-        </form>
+
+        </div>
+    </header>
+
+
+    <!-- お店について -->
+    <section class="about-section" id="about">
+
+        <div class="about-image">
+            <img src="menu1.jpg" alt="居酒屋ゆうの料理">
+        </div>
+
+        <div class="about-text">
+
+            <p class="section-label">ABOUT US</p>
+
+            <h2>お店について</h2>
+
+            <p>
+                居酒屋ゆうでは、鹿児島の食材を活かした
+                こだわりの料理と豊富なお酒をご用意しています。
+            </p>
+
+            <p>
+                友人との食事から仕事帰りの一杯まで、
+                皆さまにゆっくりと楽しんでいただける
+                居心地の良い空間を目指しています。
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- メニュー -->
+    <section class="menu-section" id="menu">
+
+        <div class="section-title">
+
+            <p>MENU</p>
+
+            <h2>おすすめメニュー</h2>
+
+            <span>こだわりの料理とお酒</span>
+
+        </div>
+
+
+        <div class="menu-list">
+
+    <!-- 地鶏 -->
+    <div class="menu-card">
+
+        <img src="menu1.jpg" alt="地鶏の炭火焼き">
+
+        <div class="menu-card-content">
+
+            <h3>地鶏の炭火焼き</h3>
+
+            <p>
+                鹿児島の地鶏を香ばしく焼き上げた、
+                当店自慢の一品です。
+            </p>
+
+            <div class="menu-price">
+                980円
+            </div>
+
+        </div>
+
     </div>
+
+
+    <!-- 刺身 -->
+    <div class="menu-card">
+
+        <img src="menu2.jpg" alt="刺身盛り合わせ">
+
+        <div class="menu-card-content">
+
+            <h3>刺身盛り合わせ</h3>
+
+            <p>
+                新鮮な魚を厳選した、
+                彩り豊かな刺身の盛り合わせです。
+            </p>
+
+            <div class="menu-price">
+                1,280円
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- だし巻き卵 -->
+    <div class="menu-card">
+
+        <img src="menu3.jpg" alt="だし巻き卵">
+
+        <div class="menu-card-content">
+
+            <h3>だし巻き卵</h3>
+
+            <p>
+                だしの旨味をたっぷり含ませた、
+                ふんわり仕上げのだし巻き卵です。
+            </p>
+
+            <div class="menu-price">
+                580円
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- 生ビール -->
+    <div class="menu-card">
+
+        <img src="menu4.jpg" alt="生ビール">
+
+        <div class="menu-card-content">
+
+            <h3>生ビール</h3>
+
+            <p>
+                キンキンに冷えた生ビール。
+                料理との相性も抜群です。
+            </p>
+
+            <div class="menu-price">
+                550円
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
-<script src="script.js"></script>
+    </section>
+
+
+    <!-- 営業時間 -->
+    <section class="info-section" id="hours">
+
+        <p class="section-label">OPENING HOURS</p>
+
+        <h2>営業時間</h2>
+
+        <p>17:00〜24:00</p>
+
+    </section>
+
+
+    <!-- アクセス -->
+    <section class="info-section" id="access">
+
+        <p class="section-label">ACCESS</p>
+
+        <h2>アクセス</h2>
+
+        <p>鹿児島市○○町1-2-3</p>
+
+    </section>
+
+
+    <!-- 予約ボタン -->
+    <button
+        class="main-reservation-button"
+        onclick="openReservation()">
+
+        予約する
+
+    </button>
+
+
+    <!-- 予約フォーム -->
+    <div id="reservation-modal" class="modal">
+
+        <div class="reservation-form">
+
+            <button
+                class="close-button"
+                onclick="closeReservation()">
+
+                ×
+
+            </button>
+
+
+            <h2>予約フォーム</h2>
+
+
+            <form onsubmit="submitReservation(event)">
+
+                <label>お名前</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    required>
+
+
+                <label>電話番号</label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    required>
+
+
+                <label>予約日</label>
+
+                <input
+                    type="date"
+                    id="date"
+                    required>
+
+
+                <label>予約時間</label>
+
+                <input
+                    type="time"
+                    id="time"
+                    required>
+
+
+                <label>人数</label>
+
+                <select
+                    id="people"
+                    required>
+
+                    <option value="">
+                        選択してください
+                    </option>
+
+                    <option value="1名">1名</option>
+                    <option value="2名">2名</option>
+                    <option value="3名">3名</option>
+                    <option value="4名">4名</option>
+                    <option value="5名">5名</option>
+                    <option value="6名">6名</option>
+                    <option value="7名">7名</option>
+                    <option value="8名">8名</option>
+
+                </select>
+
+
+                <label>備考</label>
+
+                <textarea
+                    id="message"
+                    placeholder="アレルギーなどがあれば入力してください"></textarea>
+
+
+                <button
+                    type="submit"
+                    class="submit-button">
+
+                    予約内容を確認
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
 </body>
 
 </html>
